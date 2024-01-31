@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade {
+            animation: fade 3s ease-in-out infinite;
+            display: none; 
+        }
+
+        @keyframes fade {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="fade">Your AI Co-Pilot for FinOps</h1>
+        <h1 class="fade">Rule Your Cloud Spending</h1>
+        <h1 class="fade">Slash your cloud bill by 33%</h1>
+    </div>
+    
+    <script>
+        const titles = document.querySelectorAll('.fade');
+        let titleIndex = 0;
+
+        function changeTitle() {
+            titles[titleIndex].style.display = 'none';
+            titleIndex = (titleIndex + 1) % titles.length;
+            titles[titleIndex].style.display = 'block';
+        }
+        changeTitle();
+        setInterval(changeTitle, 3000); 
+    </script>
+</body>
+</html>
